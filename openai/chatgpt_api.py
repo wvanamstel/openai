@@ -7,7 +7,7 @@ OPENAI_API_KEY = os.environ["GPT_API"]
 
 
 def create_payload(
-    model_name: str, prompt_message: str, temperature: float = 0.8, top_n: float = 0
+    model_name: str, prompt_message: str, temperature: float = 0.2, top_n: float = 0
 ) -> dict:
     payload = {
         "model": model_name,
@@ -18,7 +18,7 @@ def create_payload(
     return payload
 
 
-def hit_api(payload: dict):
+def hit_api(payload: dict) -> dict:
     headers = {
         "Content-Type": "application/json",
         "Authorization": f"Bearer {OPENAI_API_KEY}",
